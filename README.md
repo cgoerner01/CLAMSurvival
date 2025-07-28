@@ -7,7 +7,9 @@ The purpose of this repository is a faithful adaptation of CLAM for multi-modal 
 - multi-modality: inclusion of clinical and image features via early fusion
 - site and feature preserving data splitting by Howard et al.
 
-This code is part of a research project titled "Impact of Stain Normalization on Computer-Aided Survival Prognosis using HE-Stained Whole-Slide Images in Breast Cancer" which was conducted under the supervision of Prof. Windberger from the Heilbronn University of Applied Sciences, Germany in cooperation with the Computation Biomedicine research group at the University of Turin, Italy with Prof. Fariselli and Prof. Sanavia. The resulting research [manuscript](Research_Project__Impact_of_Stain_Normalization.pdf) is published in this repository as well.
+This code is part of a research project titled "Impact of Stain Normalization on Computer-Aided Survival Prognosis using HE-Stained Whole-Slide Images in Breast Cancer" which was conducted under the supervision of Prof. Windberger from the Heilbronn University of Applied Sciences, Germany in cooperation with the Computation Biomedicine research group at the University of Turin, Italy with Prof. Fariselli and Prof. Sanavia.
+
+The resulting research [manuscript](Research_Project__Impact_of_Stain_Normalization.pdf) is published in this repository as well.
 
 ## Acknowledgements
 
@@ -37,6 +39,9 @@ This code is part of a research project titled "Impact of Stain Normalization on
 	year = {2025},
 }
 ```
+
+Special thanks go out to Prof. Windberger, Prof. Fariselli and Prof. Sanavia who made this research project possible!
+
 ## Data acquisition and preprocessing
 Whole-image slides were obtained from the The Cancer Genome Atlas Program (TCGA) Breast Invasive Carcinoma (BRCA) project through the [Genomic Data Commons (GDC) Data Portal](https://portal.gdc.cancer.gov/). Corresponding clinical data was retrieved from [cBioPortal](https://www.cbioportal.org/). The clinical data of the TCGA-BRCA cohort is listed in this [file](cbioportal_firehose_brca_tcga_clinical_data.tsv). The pre-processing of this data is conducted in [clinical_preprocessing.ipynb](clinical_preprocessing.ipynb). The resulting pre-processed clinical CSVs are located in dataset_csv/. More on the distinction between [pre-clinical](/CLAM/dataset_csv/tcga-brca-survival-pre-clinical.csv) and [diagnostic clinical](/CLAM/dataset_csv/tcga-brca-survival-clinical.csv) data can be read in the manuscript. 
 
