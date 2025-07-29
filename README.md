@@ -40,6 +40,22 @@ The resulting research [manuscript](Research_Project__Impact_of_Stain_Normalizat
 }
 ```
 
+[PreservedSizeCV on GitHub](https://github.com/fmhoward/PreservedSiteCV)
+```
+@article{howard_impact_2021,
+	title = {The impact of site-specific digital histology signatures on deep learning model accuracy and bias},
+	volume = {12},
+	issn = {2041-1723},
+	url = {https://www.nature.com/articles/s41467-021-24698-1},
+	doi = {10.1038/s41467-021-24698-1},
+	pages = {1--13},
+	number = {1},
+	journaltitle = {Nature Communications},
+	shortjournal = {Nat Commun},
+	author = {Howard, Frederick M. and Dolezal, James and Kochanny, Sara and Schulte, Jefree and Chen, Heather and Heij, Lara and Huo, Dezheng and Nanda, Rita and Olopade, Olufunmilayo I. and Kather, Jakob N. and Cipriani, Nicole and Grossman, Robert L. and Pearson, Alexander T.},
+	date = {2021-07-20},
+}
+```
 Special thanks go out to Prof. Windberger, Prof. Fariselli and Prof. Sanavia who made this research project possible!
 
 ## Data acquisition and preprocessing
@@ -95,12 +111,12 @@ normalization_technique: "reinhard","macenko","vahadane","staingan","tellez_augm
 Training and testing are both done using main.py.
 If the multi-modal model should be run, i.e. using clinical data as well as WSI features, this command should be used:
 ```
-CUDA_VISIBLE_DEVICES=TODO python main.py --drop_out 0.25 --early_stopping --lr 2e-4 --k 10 --exp_code clinical_and_image_earlyfusion --weighted_sample --bag_loss ce --inst_loss mse --task survival_prediction --model_type clam_sb --log_data --data_root_dir TODO --embed_dim 1024 --split_dir TODO --include_clinical_data --clinical_input_dim TODO
+CUDA_VISIBLE_DEVICES=TODO python main.py --drop_out 0.25 --early_stopping --lr 2e-4 --k 10 --exp_code clinical_and_image_earlyfusion --weighted_sample --bag_loss ce --inst_loss mse --task survival_prediction --model_type clam_sb --log_data --data_root_dir TODO --embed_dim 1024 --split_dir TODO --csv_file_name TODO --include_clinical_data --clinical_input_dim TODO
 ```
 
 If only clinical data is of interest, this command should be used:
 ```
-CUDA_VISIBLE_DEVICES=TODO python main.py --drop_out 0.25 --early_stopping --lr 2e-4 --k 10 --exp_code clinical_and_image_earlyfusion --weighted_sample --bag_loss ce --inst_loss mse --task survival_prediction --model_type clam_sb --log_data --data_root_dir TODO --embed_dim 1024 --split_dir TODO --clinical_only
+CUDA_VISIBLE_DEVICES=TODO python main.py --drop_out 0.25 --early_stopping --lr 2e-4 --k 10 --exp_code clinical_and_image_earlyfusion --weighted_sample --bag_loss ce --inst_loss mse --task survival_prediction --model_type clam_sb --log_data --data_root_dir TODO --embed_dim 1024 --split_dir TODO --csv_file_name TODO --clinical_only
 ```
 csv_file_name: name of csv file located under dataset_csv/ containing slide_id, label and duration columns. All clinical columns must have the prefix 'clinical_' and should be scaled in range 0 to 1.
 data_root_dir: directory containing the extracted features (feat_dir of extract_features_fp.py)
